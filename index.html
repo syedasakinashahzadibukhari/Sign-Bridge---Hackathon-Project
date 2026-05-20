@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>SignBridge</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- SCREEN 1: HOME -->
+  <div class="phone" id="screen-home">
+
+    <div class="status-bar">
+      <span>9:41</span>
+      <span>●●●</span>
+    </div>
+
+    <div class="nav-bar">
+      <div class="dot"></div>
+      <span class="app-title">SignBridge</span>
+    </div>
+
+    <div class="tab-bar">
+      <div class="tab active">Home</div>
+      <div class="tab">History</div>
+    </div>
+
+    <div class="content-area">
+      <div class="display-box">
+        <div class="home-empty">
+          <div class="hand-icon">✋</div>
+          <span>Tap camera to sign</span>
+          <span>or type to translate</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="bottom-bar">
+      <input class="type-input" type="text" placeholder="type text here..." />
+      <button class="cam-btn" onclick="showScreen('screen-camera')">📷</button>
+    </div>
+
+  </div>
+
+
+  <!-- SCREEN 2: CAMERA MODE -->
+  <div class="phone hidden" id="screen-camera">
+
+    <div class="status-bar">
+      <span>9:41</span>
+      <span>●●●</span>
+    </div>
+
+    <div class="nav-bar">
+      <div class="dot"></div>
+      <span class="app-title">SignBridge</span>
+    </div>
+
+    <div class="tab-bar">
+      <div class="tab" onclick="showScreen('screen-home')">Home</div>
+      <div class="tab active">Camera</div>
+    </div>
+
+    <div class="content-area">
+
+      <div class="display-box camera-view">
+        <div class="live-badge">LIVE</div>
+        <div class="pulse-ring">✋</div>
+        <p class="cam-label">Reading your hand sign...</p>
+      </div>
+
+      <div class="result-box">
+        <div class="detected-word">Hello</div>
+        <div class="result-sub">detected from sign → text</div>
+      </div>
+
+    </div>
+
+    <div class="bottom-bar">
+      <input class="type-input" type="text" placeholder="type text here..." />
+      <button class="cam-btn active-cam">📷</button>
+    </div>
+
+  </div>
+
+
+  <!-- SCREEN 3: TEXT TO SIGN -->
+  <div class="phone hidden" id="screen-text">
+
+    <div class="status-bar">
+      <span>9:41</span>
+      <span>●●●</span>
+    </div>
+
+    <div class="nav-bar">
+      <div class="dot"></div>
+      <span class="app-title">SignBridge</span>
+    </div>
+
+    <div class="tab-bar">
+      <div class="tab active">Home</div>
+      <div class="tab">History</div>
+    </div>
+
+    <div class="content-area">
+      <div class="display-box sign-display">
+        <div class="typed-word">"Hello"</div>
+        <div class="converting-label">converting to sign language</div>
+        <div class="sign-grid">
+          <div class="sign-card"><span class="hand">🤟</span><span class="letter">H</span></div>
+          <div class="sign-card"><span class="hand">✌️</span><span class="letter">E</span></div>
+          <div class="sign-card"><span class="hand">🤙</span><span class="letter">L</span></div>
+          <div class="sign-card"><span class="hand">🤙</span><span class="letter">L</span></div>
+          <div class="sign-card"><span class="hand">👌</span><span class="letter">O</span></div>
+          <div class="sign-card done-card"><span class="done-text">✓ done</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="bottom-bar">
+      <input class="type-input" type="text" value="Hello" />
+      <button class="send-btn" onclick="showScreen('screen-home')">➤</button>
+    </div>
+
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
